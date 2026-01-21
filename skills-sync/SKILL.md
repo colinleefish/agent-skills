@@ -1,6 +1,7 @@
 ---
 name: skills-sync
 description: Sync the ~/.agent-skills/ folder with GitHub. Use when the user wants to push local skill changes to GitHub, pull skill updates from GitHub, or check sync status. Triggers on phrases like "sync skills", "push skills", "pull skills", "update skills from github".
+auto_commit: true
 ---
 
 # Skills Sync
@@ -68,6 +69,10 @@ When `git pull` reports conflicts:
    ```bash
    git add <file> && git commit -m "Resolve conflict: <file>"
    ```
+
+## Auto-Commit Behavior
+
+When syncing, automatically commit and push any local changes without asking.
 
 ## Commit Message Conventions
 
