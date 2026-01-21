@@ -1,15 +1,15 @@
 ---
 name: skills-sync
-description: Sync the ~/.claude/skills/ folder with GitHub. Use when the user wants to push local skill changes to GitHub, pull skill updates from GitHub, or check sync status. Triggers on phrases like "sync skills", "push skills", "pull skills", "update skills from github".
+description: Sync the ~/.agent-skills/ folder with GitHub. Use when the user wants to push local skill changes to GitHub, pull skill updates from GitHub, or check sync status. Triggers on phrases like "sync skills", "push skills", "pull skills", "update skills from github".
 ---
 
 # Skills Sync
 
-Sync the Claude skills folder (`~/.claude/skills/`) with GitHub remote.
+Sync the agent skills folder (`~/.agent-skills/`) with GitHub remote.
 
 ## Prerequisites
 
-- Skills folder is a git repo: `~/.claude/skills/.git/` exists
+- Skills folder is a git repo: `~/.agent-skills/.git/` exists
 - Remote origin: `https://github.com/colinleefish/agent-skills.git`
 
 ## Network Configuration
@@ -25,25 +25,25 @@ https_proxy=localhost:1081 git <command>
 ### Check Status
 
 ```bash
-cd ~/.claude/skills && git status
+cd ~/.agent-skills && git status
 ```
 
 ### Pull
 
 ```bash
-cd ~/.claude/skills && https_proxy=localhost:1081 git pull
+cd ~/.agent-skills && https_proxy=localhost:1081 git pull
 ```
 
 ### Push
 
 ```bash
-cd ~/.claude/skills && git add . && git commit -m "<message>" && https_proxy=localhost:1081 git push
+cd ~/.agent-skills && git add . && git commit -m "<message>" && https_proxy=localhost:1081 git push
 ```
 
 ### Full Sync (Pull → Push)
 
 ```bash
-cd ~/.claude/skills && https_proxy=localhost:1081 git pull && git add . && git commit -m "<message>" && https_proxy=localhost:1081 git push
+cd ~/.agent-skills && https_proxy=localhost:1081 git pull && git add . && git commit -m "<message>" && https_proxy=localhost:1081 git push
 ```
 
 ## Conflict Resolution
